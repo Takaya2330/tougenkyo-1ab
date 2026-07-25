@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>桃源郷自動車研究所</title>
+
+<style>
+
+html,
+
+body {
+
+  margin: 0;
+
+  padding: 0;
+
+  background: #202020;
+
+  color: #111111;
+
+  font-family: "MS PGothic", "Osaka", monospace;
+
+}
+
+body {
+
+  background-image:
+
+    radial-gradient(
+
+      circle at 20% 20%,
+
+      rgba(255, 255, 255, 0.05) 0 1px,
+
+      transparent 1px
+
+    );
+
+  background-size: 8px 8px;
+
+}
+
+.page {
+
+  width: 760px;
+
+  max-width: calc(100% - 18px);
+
+  margin: 10px auto 30px;
+
+  background: #ffffff;
+
+  border: 4px ridge #d0d0d0;
+
+  box-shadow: 0 0 0 2px #000000;
+
+}
+
+.masthead {
+
+  text-align: center;
+
+  background: #000066;
+
+  color: #ffffff;
+
+  padding: 12px 8px 8px;
+
+  border-bottom: 4px ridge #d0d0d0;
+
+}
+
+.stars {
+
+  color: #ffff00;
+
+  letter-spacing: 2px;
+
+  font-weight: bold;
+
+}
+
+h1 {
+
+  margin: 7px 0 2px;
+
+  font-size: 36px;
+
+  color: #ffffff;
+
+  text-shadow:
+
+    2px 2px #ff00ff,
+
+    4px 4px #000000;
+
+}
+
+.subtitle {
+
+  margin-top: 6px;
+
+  color: #7fffd4;
+
+  font-size: 14px;
+
+}
+
+.blink {
+
+  display: inline-block;
+
+  color: #ffff00;
+
+  font-weight: bold;
+
+  animation: blink 1s steps(1, end) infinite;
+
+}
+
+@keyframes blink {
+
+  50% {
+
+    opacity: 0;
+
+  }
+
+}
+
+.marquee {
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  background: #000000;
+
+  color: #00ff00;
+
+  border-top: 2px inset #aaaaaa;
+
+  border-bottom: 2px inset #aaaaaa;
+
+  padding: 5px 0;
+
+  font-size: 14px;
+
+}
+
+.marquee span {
+
+  display: inline-block;
+
+  padding-left: 100%;
+
+  animation: scroll 18s linear infinite;
+
+}
+
+@keyframes scroll {
+
+  to {
+
+    transform: translateX(-100%);
+
+  }
+
+}
+
+.layout {
+
+  display: grid;
+
+  grid-template-columns: 190px 1fr;
+
+  gap: 8px;
+
+  padding: 8px;
+
+  background: #c0c0c0;
+
+}
+
+.side,
+
+.main {
+
+  background: #f5f5f5;
+
+  border: 3px ridge #ffffff;
+
+  padding: 8px;
+
+}
+
+.side h2,
+
+.main h2 {
+
+  margin: 0 0 7px;
+
+  padding: 4px 6px;
+
+  color: #ffffff;
+
+  background: #000080;
+
+  border: 2px outset #dddddd;
+
+  font-size: 17px;
+
+}
+
+.menu a {
+
+  display: block;
+
+  padding: 5px 3px;
+
+  color: #0000cc;
+
+  font-weight: bold;
+
+  text-decoration: underline;
+
+}
+
+.menu a:visited {
+
+  color: #800080;
+
+}
+
+.mini {
+
+  margin-top: 8px;
+
+  padding: 6px;
+
+  background: #ffffff;
+
+  border: 2px inset #aaaaaa;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+}
+
+.counter {
+
+  display: inline-block;
+
+  padding: 3px 6px;
+
+  background: #000000;
+
+  color: #00ff00;
+
+  border: 3px inset #aaaaaa;
+
+  font-family: "Courier New", monospace;
+
+  font-size: 19px;
+
+  letter-spacing: 3px;
+
+}
+
+.hero {
+
+  margin-bottom: 9px;
+
+  padding: 10px;
+
+  text-align: center;
+
+  background: #ffffcc;
+
+  border: 2px dashed #ff0000;
+
+}
+
+.hero strong {
+
+  color: #b00000;
+
+  font-size: 20px;
+
+}
+
+.badge {
+
+  display: inline-block;
+
+  padding: 2px 5px;
+
+  background: #ffff00;
+
+  color: #000000;
+
+  border: 2px outset #dddddd;
+
+  font-size: 11px;
+
+  font-weight: bold;
+
+}
+
+.philosophy {
+
+  padding: 10px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 3px double #000080;
+
+  font-weight: bold;
+
+  line-height: 1.8;
+
+}
+
+.construction {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin: 10px 0;
+
+  padding: 8px;
+
+  background: #ffffff;
+
+  border: 2px dotted #ff0000;
+
+}
+
+.cone {
+
+  font-size: 38px;
+
+  animation: wobble 1.3s ease-in-out infinite alternate;
+
+}
+
+@keyframes wobble {
+
+  from {
+
+    transform: rotate(-5deg);
+
+  }
+
+  to {
+
+    transform: rotate(5deg);
+
+  }
+
+}
+
+table {
+
+  width: 100%;
+
+  border-collapse: collapse;
+
+  background: #ffffff;
+
+  font-size: 13px;
+
+}
+
+th,
+
+td {
+
+  padding: 5px;
+
+  border: 1px solid #555555;
+
+  vertical-align: top;
+
+}
+
+th {
+
+  background: #000080;
+
+  color: #ffffff;
+
+}
+
+.bgm-box {
+
+  margin-top: 8px;
+
+  padding: 7px;
+
+  text-align: center;
+
+  background: #111111;
+
+  color: #ffffff;
+
+  border: 3px inset #aaaaaa;
+
+}
+
+button {
+
+  padding: 5px 10px;
+
+  background: #c0c0c0;
+
+  border: 3px outset #dddddd;
+
+  font-family: inherit;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+}
+
+button:active {
+
+  border-style: inset;
+
+}
+
+.status {
+
+  margin-top: 5px;
+
+  color: #ffff00;
+
+  font-size: 11px;
+
+}
+
+.footer {
+
+  padding: 10px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border-top: 4px ridge #dddddd;
+
+  font-size: 12px;
+
+}
+
+.small {
+
+  font-size: 11px;
+
+}
+
+@media (max-width: 650px) {
+
+  .layout {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  h1 {
+
+    font-size: 26px;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+  <header class="masthead">
+
+    <div class="stars">
+
+      ★ ★ ★ ★ ★ ★ ★ ★ ★ ★
+
+    </div>
+
+    <h1>桃源郷自動車研究所</h1>
+
+    <div class="subtitle">
+
+      Tougenkyo Automobile Research Laboratory
+
+    </div>
+
+    <div>
+
+      <span class="blink">
+
+        ● NOW UNDER CONSTRUCTION ●
+
+      </span>
+
+    </div>
+
+  </header>
+
+  <div class="marquee">
+
+    <span>
+
+      ようこそ桃源郷自動車研究所へ！　
+
+      くだらない事を、本気で。考え、気づき、確かめる。　
+
+      最終更新：2026/07/25
+
+    </span>
+
+  </div>
+
+  <div class="layout">
+
+    <aside class="side">
+
+      <h2>研究棟案内</h2>
+
+      <nav class="menu">
+
+        <a href="#home">■ 本館</a>
+
+        <a href="#journal">■ 研究日誌</a>
+
+        <a href="#car">■ 自動車研究棟</a>
+
+        <a href="#matsudo">■ 松戸歴史資料室</a>
+
+        <a href="#msx">■ MSX保管庫</a>
+
+        <a href="#perfume">■ Perfume研究室</a>
+
+        <a href="#director">■ 所長室</a>
+
+      </nav>
+
+      <div class="mini">
+
+        <b>あなたは</b><br>
+
+        <span class="counter" id="counter">
+
+          0000001
+
+        </span><br>
+
+        <b>人目の研究員です。</b>
+
+      </div>
+
+      <div class="bgm-box">
+
+        <b>♪ BGM CONTROL ♪</b><br><br>
+
+        <button id="bgmButton">
+
+          ▶ BGM ON
+
+        </button>
+
+        <div class="status" id="bgmStatus">
+
+          BGM候補：しゃろう「2:23 AM」<br>
+
+          音源は後日実装予定
+
+        </div>
+
+      </div>
+
+      <div class="mini">
+
+        <b>推奨環境</b><br>
+
+        Internet Explorer 5.5<br>
+
+        Netscape 4.7<br>
+
+        800×600以上<br>
+
+        <span class="small">
+
+          ※もちろん冗談です
+
+        </span>
+
+      </div>
+
+    </aside>
+
+    <main class="main" id="home">
+
+      <div class="hero">
+
+        <strong>
+
+          1999年の見た目で、2026年の研究を。
+
+        </strong><br>
+
+        <span class="badge">
+
+          Since 2026
+
+        </span>
+
+      </div>
+
+      <div class="philosophy">
+
+        この研究所では、<br>
+
+        「くだらない事を、本気で。」<br>
+
+        考え、気づき、確かめる。
+
+      </div>
+
+      <div class="construction">
+
+        <div class="cone">🚧</div>
+
+        <div>
+
+          <b>ただいま研究所建設中！</b><br>
+
+          きっかけは、ランクルでドリフトして
+
+          遊んでいただけでした。<br>
+
+          ……なぜこうなった。
+
+        </div>
+
+        <div class="cone">🚧</div>
+
+      </div>
+
+      <h2 id="journal">
+
+        更新履歴／研究日誌
+
+      </h2>
+
+      <table>
+
+        <tr>
+
+          <th style="width: 110px;">日付</th>
+
+          <th>研究記録</th>
+
+        </tr>
+
+        <tr>
+
+          <td>2026/07/25</td>
+
+          <td>
+
+            GitHubアカウント「Takaya2330」を取得。
+
+            研究所建設予定地を確保。
+
+          </td>
+
+        </tr>
+
+        <tr>
+
+          <td>2026/07/25</td>
+
+          <td>
+
+            桃源郷自動車研究所の基本設計を決定。
+
+            1999年風外観と現代技術で運営予定。
+
+          </td>
+
+        </tr>
+
+        <tr>
+
+          <td>2026/07/25</td>
+
+          <td>
+
+            BGM候補として、しゃろう「2:23 AM」を検討。
+
+          </td>
+
+        </tr>
+
+      </table>
+
+      <h2 id="car">
+
+        自動車研究棟
+
+      </h2>
+
+      <p>
+
+        <b>主な研究：</b>
+
+        Racing Master、セッティング、
+
+        リプレイ解析、実車の記憶。
+
+      </p>
+
+      <p>
+
+        速い車で速いのは当たり前。
+
+        みんなが持っている車、変な車、
+
+        忘れられた車で爪痕を残す。
+
+      </p>
+
+      <h2 id="matsudo">
+
+        松戸歴史資料室
+
+      </h2>
+
+      <p>
+
+        <b>主な研究：</b>
+
+        柿ノ木台付近の伝染病隔離病舎、
+
+        古地図、鮮魚街道、
+
+        地域に残る記憶。
+
+      </p>
+
+      <p>
+
+        ネットにほとんど残らない情報を、
+
+        一次資料と現地の痕跡から確かめる。
+
+      </p>
+
+      <h2 id="msx">
+
+        MSX保管庫
+
+      </h2>
+
+      <p>
+
+        <b>主な研究：</b>
+
+        BASIC、COLOR命令、
+
+        パケット通信、BBS、
+
+        個人ホームページ文化。
+
+      </p>
+
+      <h2 id="perfume">
+
+        Perfume研究室
+
+      </h2>
+
+      <p>
+
+        <b>主な研究：</b>
+
+        楽曲、ライブ、振付、
+
+        言葉の受け取り方、MY COLOR。
+
+      </p>
+
+      <p class="small">
+
+        ※歌詞の転載はせず、
+
+        所長自身の感想と言葉で記録します。
+
+      </p>
+
+      <h2 id="director">
+
+        所長室
+
+      </h2>
+
+      <p>
+
+        <b>所長：</b>
+
+        Takaya2330
+
+      </p>
+
+      <p>
+
+        <b>主任研究テーマ：</b>
+
+        クルマ、松戸地域史、
+
+        MSXと通信文化、音楽、AI。
+
+      </p>
+
+    </main>
+
+  </div>
+
+  <footer class="footer">
+
+    このページはリンクフリーです。<br>
+
+    Mail：準備中　／　
+
+    掲示板：工事中　／　
+
+    相互リンク：大歓迎（予定）<br><br>
+
+    BGM候補：「2:23 AM」／ Music by しゃろう<br>
+
+    音源提供：DOVA-SYNDROME<br><br>
+
+    <b>桃源郷自動車研究所</b><br>
+
+    Copyright © 2026 Takaya2330
+
+  </footer>
+
+</div>
+
+<script>
+
+(function () {
+
+  const counterKey = "tougenkyo-visit-count";
+
+  let visitCount = parseInt(
+
+    localStorage.getItem(counterKey) || "0",
+
+    10
+
+  );
+
+  visitCount = visitCount + 1;
+
+  localStorage.setItem(
+
+    counterKey,
+
+    String(visitCount)
+
+  );
+
+  document.getElementById("counter").textContent =
+
+    String(visitCount).padStart(7, "0");
+
+  const bgmButton =
+
+    document.getElementById("bgmButton");
+
+  const bgmStatus =
+
+    document.getElementById("bgmStatus");
+
+  bgmButton.addEventListener(
+
+    "click",
+
+    function () {
+
+      bgmStatus.innerHTML =
+
+        "BGM音源は現在準備中です。<br>" +
+
+        "しゃろう「2:23 AM」を後日実装予定！";
+
+    }
+
+  );
+
+})();
+
+</script>
+
+</body>
+
+</html>
