@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>研究日誌 No.001｜桃源郷自動車研究所</title>
+
+<style>
+
+body {
+
+  margin: 0;
+
+  padding: 8px;
+
+  background: #008080;
+
+  color: #000;
+
+  font-family: "MS PGothic", "ＭＳ Ｐゴシック", sans-serif;
+
+}
+
+.page {
+
+  max-width: 820px;
+
+  margin: auto;
+
+  background: #ffffcc;
+
+  border: 5px ridge #dddddd;
+
+}
+
+header {
+
+  padding: 14px;
+
+  text-align: center;
+
+  color: #ffffff;
+
+  background: #000080;
+
+  border-bottom: 5px ridge #dddddd;
+
+}
+
+h1 {
+
+  margin: 5px 0;
+
+  color: #ffff00;
+
+  font-size: 30px;
+
+}
+
+.subtitle {
+
+  font-size: 13px;
+
+}
+
+main {
+
+  padding: 12px;
+
+}
+
+h2 {
+
+  margin-top: 22px;
+
+  padding: 5px 8px;
+
+  color: #ffffff;
+
+  background: #000080;
+
+  border: 3px outset #dddddd;
+
+  font-size: 19px;
+
+}
+
+h3 {
+
+  color: #b00000;
+
+  border-bottom: 2px dotted #b00000;
+
+}
+
+p {
+
+  line-height: 1.9;
+
+}
+
+.date {
+
+  padding: 8px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 3px double #000080;
+
+  font-weight: bold;
+
+}
+
+.quote {
+
+  margin: 12px 20px;
+
+  padding: 10px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 2px inset #aaaaaa;
+
+  font-weight: bold;
+
+}
+
+.result {
+
+  padding: 10px;
+
+  background: #ffffff;
+
+  border: 2px solid #777777;
+
+  line-height: 2;
+
+}
+
+.comment {
+
+  margin-top: 18px;
+
+  padding: 12px;
+
+  background: #ffff99;
+
+  border: 4px double #b00000;
+
+  line-height: 1.9;
+
+  font-weight: bold;
+
+}
+
+.back {
+
+  margin: 25px 0 10px;
+
+  text-align: center;
+
+}
+
+a {
+
+  color: #0000ee;
+
+}
+
+a:visited {
+
+  color: #551a8b;
+
+}
+
+footer {
+
+  padding: 12px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border-top: 5px ridge #dddddd;
+
+  font-size: 12px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+<header>
+
+  <div>★ ★ ★ ★ ★ ★ ★ ★ ★ ★</div>
+
+  <h1>研究日誌 No.001</h1>
+
+  <div class="subtitle">桃源郷自動車研究所</div>
+
+</header>
+
+<main>
+
+<div class="date">
+
+2026年7月25日<br>
+
+桃源郷自動車研究所、開設。
+
+</div>
+
+<p>
+
+今日は一日かけて「桃源郷自動車研究所」のホームページ制作に挑戦した。
+
+</p>
+
+<p>
+
+「ちょっと作ってみるか！」のつもりが、気付けばGitHubと丸一日格闘することに。
+
+</p>
+
+<h2>研究①　404から始まる研究所</h2>
+
+<p>
+
+公開設定を終え、期待を胸にホームページを開くと……
+
+</p>
+
+<div class="quote">
+
+404。
+
+</div>
+
+<p>
+
+原因は、
+
+</p>
+
+<div class="quote">
+
+Index.html と index.html は別物。
+
+</div>
+
+<p>
+
+という、ごく基本的だけれど忘れやすい落とし穴だった。
+
+</p>
+
+<p><strong>研究成果：</strong></p>
+
+<div class="quote">
+
+ファイル名の大文字・小文字は重要。
+
+</div>
+
+<h2>研究②　コードを書き換えた結果</h2>
+
+<p>
+
+「ここだけ直せば大丈夫。」
+
+</p>
+
+<p>
+
+……そう思った。
+
+</p>
+
+<p>
+
+結果はHTML崩壊。
+
+</p>
+
+<p>
+
+どこを直せばいいのか分からなくなり、一度コードを整理して再アップロード。
+
+</p>
+
+<p>
+
+GitHubには、
+
+</p>
+
+<div class="quote">
+
+一度コード壊して再アップw
+
+</div>
+
+<p>
+
+という、いかにも研究所らしい履歴が残った（笑）。
+
+</p>
+
+<h2>研究③　BGM事件</h2>
+
+<p>
+
+最後の課題はBGM。
+
+</p>
+
+<p>
+
+ボタンを押しても、
+
+</p>
+
+<div class="quote">
+
+再生できませんでした
+
+</div>
+
+<p>
+
+コードを確認しても異常なし。
+
+</p>
+
+<p>
+
+原因を調べると……
+
+</p>
+
+<div class="quote">
+
+MP3が2バイト。
+
+</div>
+
+<p>
+
+どう考えても音楽は入らない（笑）。
+
+</p>
+
+<p>
+
+7MBの正しいファイルへ差し替えたところ、
+
+<strong>「2:23 AM」</strong>が流れ始めた。
+
+</p>
+
+<p>
+
+あの瞬間は思わずガッツポーズだった。
+
+</p>
+
+<h2>本日の成果</h2>
+
+<div class="result">
+
+■ GitHub Pages公開<br>
+
+■ 桃源郷自動車研究所ホームページ完成<br>
+
+■ BGM実装成功<br>
+
+■ GitHub基本操作を習得<br>
+
+■ 編集マニュアル作成開始
+
+</div>
+
+<h2>今日の所感</h2>
+
+<p>
+
+今日はレーマスをほとんど走れなかった。
+
+</p>
+
+<p>
+
+その代わりに、
+
+</p>
+
+<p>
+
+レーマスの研究も、松戸の歴史調査も、これから積み重ねていくための
+
+<strong>「桃源郷自動車研究所」</strong>という場所が完成した。
+
+</p>
+
+<p>
+
+遠回りだったけれど、悪くない一日だった。
+
+</p>
+
+<div class="comment">
+
+研究は成功だけでは進まない。<br>
+
+404も、2バイトのMP3も、今日の大切な研究成果である。
+
+</div>
+
+<div class="back">
+
+<a href="../index.html">■ 桃源郷自動車研究所へ戻る</a>
+
+</div>
+
+</main>
+
+<footer>
+
+桃源郷自動車研究所<br>
+
+Copyright © 2026 Takaya2330
+
+</footer>
+
+</div>
+
+</body>
+
+</html>
