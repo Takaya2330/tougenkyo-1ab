@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://takaya2330.github.io/tougenkyo-1ab/sitemap.xml
